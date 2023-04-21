@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        background: url("../resources/imgs/fire.png");
+    }
+    .baidu img{
+        width: 100px;
+    }
+</style>
+<body>
+            <ul class="baidu">
+                <li><img src='../resources/imgs/fire.png'></li>
+                <li><img src='../resources/imgs/water.png'></li>
+                <li><img src='../resources/imgs/grass.png'></li>
+            </ul>
+<script>
+    var imgs = document.querySelector('.baidu').querySelectorAll('img');
+    for (let i = 0; i <imgs.length ; i++) {
+        imgs[i].onclick=function (){
+            document.body.style.backgroundImage= 'url('+this.src+')';
+        }
+    }
+
+</script>
+</body>
+</html>
