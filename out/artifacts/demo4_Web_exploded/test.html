@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">{{ message }}</div>
+<div id="app2">
+    <h1>{{ name }}</h1>
+    <input v-model="name">
+</div>
+
+<script>
+    const { createApp } = Vue
+    createApp({
+        data() {
+            return {
+                message: 'Hello Vue!'
+            }
+        }
+    }).mount('#app')
+
+    const vm =Vue.createApp({
+        data(){
+            return{
+                message: 'hello vue 3.0',
+                name:"david"
+            }
+        }
+
+    });
+    vm.mount('#app2')
+
+</script>
+</body>
+</html>

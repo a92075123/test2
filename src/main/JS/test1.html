@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+      function s1 (arr){
+
+        var sum = 0 ;
+        var str =''
+        for (let i = 0; i <arr.length ; i++) {
+          if(arr[i]==='red'){
+            str += i+' ';
+            sum++
+          }
+
+        }
+        console.log('red出現的位置分別為:'+str)
+        console.log('總共出現'+sum+'次')
+     }
+     s1(['red','blue','red','green','pink','red']);
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <input id="passwd" type="password">
+        <button id="openClose">顯示密碼</button>
+    </div>
+<script>
+    var openClose = document.getElementById('openClose');
+    var passwd =document.getElementById('passwd')
+    var organ = 0;
+
+    openClose.onclick=function (){
+        if (organ==0)
+        {
+            passwd.type = 'text'
+            openClose.innerText = '隱藏密碼'
+            organ=1;
+        }else
+        {
+            passwd.type = 'password'
+            openClose.innerText = '顯示密碼'
+            organ=0;
+        }
+    }
+
+</script>
+</body>
+</html>

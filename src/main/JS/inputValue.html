@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <button>按鈕</button>
+  <input type="text" value="輸入內容">
+<script>
+    var btn =document.querySelector('button');
+    var text = document.querySelector('input')
+
+    btn.onclick= function (){
+      //改變表單的值要使用value這個屬性
+      text.value='我接收到了';
+
+      //按鈕被禁止使用 disabled=true被禁用的
+      // btn.disabled=true;
+      this.disabled=true;
+      //this 指向的是使用這個事件函數的對象
+    }
+
+</script>
+</body>
+</html>
