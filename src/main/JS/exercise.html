@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <table>
+       <thead >
+          <input type="checkbox" id="thbox" >
+      </thead>
+          <tbody id="tbbox">
+            <tr>
+                <td><input type="checkbox" ></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" ></td>
+            </tr>
+            <tr>
+                 <td><input type="checkbox" ></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" ></td>
+            </tr>
+    </tbody>
+    </table>
+      <script>
+           var th =  document.querySelector('#thbox')
+           var td =  document.querySelector('#tbbox').querySelectorAll('input')
+           th.onclick=function (){
+               for (let i = 0; i < td.length; i++) {
+                   td[i].checked=th.checked
+               }
+           }
+           for (let i = 0; i <td.length ; i++) {
+               var flag
+               td[i].onclick=function (){
+                   for (let j = 0; j < td.length; j++) {
+                       if(td[j].checked==false){
+                           flag=false;
+                           break
+                       }
+                       flag=true
+                   }
+                   th.checked=flag
+                   }
+
+           }
+
+      </script>
+</body>
+</html>

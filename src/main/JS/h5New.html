@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div data-index="3" data-list-fruit="apple"></div>
+      <script>
+        var div = document.querySelector('div');
+        //dataset只能獲取data-開頭的元素標籤
+        //要在多自定義屬性的標籤，要使用駝峰式命名法才可以取得
+        console.log(div.dataset.listFruit);
+
+      </script>
+</body>
+</html>
