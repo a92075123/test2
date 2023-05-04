@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <h1>hello,{{name}}</h1>
+</div>
+
+</body>
+<script>
+    //EL兩種寫法
+    const v = new Vue({
+        // el:'#root', //EL第一種寫法
+        // data:{  data第一種寫法
+        //     name:'daivd'
+        // }
+        data(){   //data第二種寫法
+            return{
+                name:"david"
+            }
+        }
+    })
+    v.$mount('#root')//EL第二種寫法
+
+</script>
+</html>
