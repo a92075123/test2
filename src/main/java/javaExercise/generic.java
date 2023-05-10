@@ -13,7 +13,7 @@ public class generic {
         while (iterator.hasNext()){
             //因為這裡使用了泛型是student類型，就無需再向下轉換，就可以給Student類型的變量student值，並輸出name
             Student student =iterator.next();
-//            System.out.println(student);
+           System.out.println(student);
         }
 
         HashMap<String,Student> students2 = new HashMap<String,Student>();
@@ -24,6 +24,7 @@ public class generic {
         Iterator<Map.Entry<String, Student>> iterator1 = entries.iterator();
         while (iterator1.hasNext()){
             Map.Entry<String, Student> next = iterator1.next();
+
             System.out.println(next.getKey()+next.getValue());
         }
 

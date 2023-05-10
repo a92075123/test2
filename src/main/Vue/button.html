@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+     <div id="root">
+         <h2>歡迎來到{{name}}</h2>
+         <button v-on:click="showInfo">點我提示信息</button>
+         <button v-on:click="showInfo2(50)">得到號碼</button>
+     </div>
+<script>
+        //v-on綁定事件這裡綁定click點擊事件
+    new Vue({
+      data(){
+          return{
+             name:"上硅谷"
+          }
+      },
+      methods:{
+          showInfo(a){
+              alert("同學你好");
+              console.log(event)
+          },
+          showInfo2(number){
+             console.log(number)
+          }
+      }
+
+    }).$mount('#root')
+
+</script>
+</body>
+</html>

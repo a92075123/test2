@@ -6,7 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String a = request.getParameter("user");
+    request.setAttribute("user",a);
+    System.out.println(a);
 
+%>
 
 <html>
   <head>
@@ -52,7 +57,7 @@
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
       <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput"  placeholder="name@example.com">
+          <input type="email" class="form-control" id="floatingInput" name="user" placeholder="name@example.com">
           <label for="floatingInput">Email address</label>
       </div>
       <div class="form-floating">
@@ -78,8 +83,9 @@
 
   <script>
       function checkMember(event){
-          event.preventDefault();
+           event.preventDefault();
          const userElement = document.getElementById('floatingInput');
+
          const passwordElement = document.getElementById('floatingPassword');
          const  user2 = userElement.value;
          const  passwd= passwordElement.value;
@@ -117,7 +123,7 @@
       }
       function checkCookie(){
           var user=getCookie("user");
-          console.log(user)
+
       }
       // var member=JSON.stringify(employeeInfo);
       //

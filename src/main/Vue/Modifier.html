@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    *{
+        margin-top:20px ;
+    }
+
+    .demo1{
+        height: 50px;
+        background-color:skyblue ;
+    }
+    .box1{
+        padding: 5px;
+        background-color: skyblue;
+    }
+    .box2{
+        padding: 5px;
+        background-color: orange;
+    }
+
+</style>
+<body>
+<!--
+Vue常用的修飾符
+      prevent:阻止跳網頁
+      stop:防止冒泡，也就是當一個區塊有多個click的時候不會觸發多個按鈕事件，只會觸發一個
+      once:只會發生一次作用
+      capture:原本的邏輯是先捕獲有幾個事件，在冒泡反應程式，而capture會直接在捕獲階段的時候就馬上執行程式，就沒有經過冒泡
+      self
+      passive
+-->
+     <div id="root">
+         <h2>歡迎來到{{name}}</h2>
+        <a href="http://www.google.com" @click.prevent="showInfo">發出訊息</a>
+         <div class="demo1" @click="showInfo">
+             <button @click.stop="showInfo2">給我發出消息</button>
+         </div>
+                <button @click.once="showInfo2">給我發出消息</button>
+         <div class="box1" @click.capture="showMsg(1)">
+         div1
+             <div class="box2" @click="showMsg(2)">
+                 div2
+             </div>
+         </div>
+
+     </div>
+<script>
+        //v-on綁定事件這裡綁定click點擊事件
+    new Vue({
+      data(){
+          return{
+             name:"上硅谷"
+          }
+      },
+      methods:{
+            showInfo() {
+                alert('同學你好')
+            },
+            showInfo2() {
+              alert('同學你好2')
+            },
+            showMsg(msg) {
+              console.log(msg)
+          }
+      }
+
+    }).$mount('#root')
+
+</script>
+</body>
+</html>

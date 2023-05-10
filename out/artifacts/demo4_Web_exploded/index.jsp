@@ -28,14 +28,6 @@
 <div id="app">Hello!{{ message }}</div>
 
 <script type="text/javascript">
-    const { createApp } = Vue
-    createApp({
-        data() {
-            return {
-                message: 'ggid!'
-            }
-        }
-    }).mount('#app')
 </script>
 </body>
 
