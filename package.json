@@ -5,5 +5,10 @@
   },
   "dependencies": {
     "vue": "^3.2.47"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "vue-cli-service test"
   }
 }

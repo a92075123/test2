@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--    按鍵類別
+    tab只能觸發keydown
+
+    ctrl,alt,shirt,meta
+    keyup:使用按下當下四個鍵還要再+上其他鍵才會觸發，例如ctrl+y才會觸發事件
+    keydown:正常觸發事件
+    ctrl.英文字:可以指綁定該綁定的英文字假設綁y就只能用CTRL.Y觸發
+    -->
+    <div id="root">
+        <h2>歡迎來到{{name}}</h2>
+        <input type="text" placeholder="按下enter" @keyup.huiche="showInfo">
+    </div>
+</body>
+<script>
+    Vue.config.productionTip=false
+
+    //自創按鍵事件:.huiche=13=enter
+    Vue.config.keyCodes.huiche=13;
+
+    new Vue({
+        el:'#root',
+        data:{
+            name:'david'
+        },
+        methods:{
+          showInfo(e){
+              console.log(e.target.value)
+              this.name='david2'
+          }
+        }
+    })
+
+</script>
+</html>

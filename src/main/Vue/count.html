@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <input type="text" v-model="firstname"> <br> <br>
+    <input type="text" v-model="lastname"> <br> <br>
+    <input type="text" v-model="finalname"> <br> <br>
+
+
+</div>
+</body>
+<script>
+        new Vue ({
+            el:'#root',
+            data(){
+                return{
+                    firstname:'張',
+                    lastname:'圍成'
+                }
+            },
+            computed:{
+                finalname :{
+                    // 當get甚麼時候觸發；第一次讀取到finalname的時候或是當finalname的數據發生變化的當下
+                    get()
+                    {
+                        return this.firstname +this.lastname
+                    },
+                    set(v) {
+                        var sum
+                        if (v != '') {
+                            this.firstname=v[0]
+                            if(v[1]!=''){
+                                this.lastname=v[1]
+                            }else {
+                                this.lastname=''
+                            }
+
+                            }
+                        else {
+                            this.firstname=''
+                            this.lastname=''
+                            finalname=''
+                        }
+                        },
+                        }
+                    // 當set甚麼時候觸發:當finalname被修改時
+            }
+        })
+</script>
+</html>
