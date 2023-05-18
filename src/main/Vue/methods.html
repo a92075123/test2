@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+</head>
+<body>
+<div id="app">
+    <p> 1日幣 = 0.278台幣</p>
+    <div>台幣 <input v-model="twd"></div>
+    <div>日幣 <input v-model="jpy"></div>
+    <div>美金 <input v-model="usd"></div>
+</div>
+
+
+</body>
+<script>
+     const vm = Vue.createApp({
+         data(){
+             return{
+                twd:0.278
+             }
+         },
+         // methods:{
+         //     subtotal:function (){
+         //         console.log('methods');
+         //         return this.price * this.quantity;
+         //     }
+         // },
+         //computed  屬性會將計算後的結果暫存，若它所觀察的屬性沒有被更新的情況下，computed就不會重複被執行。
+         computed:
+             {
+                 // subtotalComputed:function (){
+                 //     console.log('computed');
+                 //     return this.quantity * this.price;
+                 // }
+
+                 jpy:{
+                     get(){
+                         return Number.parseFloat(Number(this.twd)/0.278).toFixed(3);
+                     },
+                     set(v){
+                         this.twd = Number.parseFloat(Number(v)*0.278).toFixed(3);
+                     }
+                 },
+                 usd:{
+                     get(){
+                         return Number.parseFloat(Number(this.twd)/30).toFixed(3);
+                     },
+                     set(v){
+                         this.twd = Number.parseFloat(Number(v)*30).toFixed(3);
+                     }
+                 }
+         }
+
+
+     }).mount('#app')
+</script>
+</html>

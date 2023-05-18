@@ -10,6 +10,8 @@
     <h1>Hello,{{name}}</h1>
     <!--    可以在標籤或是自創標籤前面加上 : ，這樣就可以綁定Vue裡面的值了。  -->
     <h2 :x="school.name">Hello,</h2>
+    <button v-bind:disabled="isBtnDisabled">按鈕</button>
+    <button v-on:click="around">按鈕2</button>
 </div>
 <script>
     Vue.config.productionTip=false
@@ -19,8 +21,20 @@
             name:'david',
             school:{
                 name:'blue'
-            }
+            },
+            isBtnDisabled:true
+        },
+        methods:{
+          around: function (){
+             this.isBtnDisabled=false
+          }
         }
+        // computed:{
+        //     around: function (){
+        //         this.isBtnDisabled=false
+        //     }
+        // }
+
     });
 </script>
 </body>

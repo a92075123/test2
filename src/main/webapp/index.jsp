@@ -5,6 +5,8 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -25,9 +27,26 @@
         </div>
     </div>
 </nav>
-<div id="app">Hello!{{ message }}</div>
+<div id="app">
+    <ul v-if="data2"></ul>
+    <li v-for="item in data2">{{ item}}</li>
+
+
+</div>
+
 
 <script type="text/javascript">
+
+    new Vue ({
+        el:"#app",
+        data(){
+            return{
+                data2:null
+            }
+        }
+
+    })
+
 </script>
 </body>
 
